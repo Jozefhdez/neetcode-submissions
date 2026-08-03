@@ -1,0 +1,11 @@
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        h = {} # Store [complement] = index
+
+        for i, num in enumerate(nums):
+            complement = target - num
+            if complement in h:
+                return [h[complement], i]
+            h[num] = i
+        
+        return []
